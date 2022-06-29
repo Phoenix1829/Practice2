@@ -25,7 +25,8 @@ namespace Calculator
             {
                 double a = Convert.ToDouble(textBox1.Text);
                 double b = Convert.ToDouble(textBox2.Text);
-                double result = a + b;
+                ITwoArgumentsCalculator calculator = TwoArgumentsFactory.Creator("Sum");
+                double result = calculator.Calculate(a, b);
                 textBox3.Text = result.ToString();
             }
         }
@@ -36,7 +37,8 @@ namespace Calculator
             {
                 double a = Convert.ToDouble(textBox1.Text);
                 double b = Convert.ToDouble(textBox2.Text);
-                double result = a - b;
+                ITwoArgumentsCalculator calculator = TwoArgumentsFactory.Creator("Diff");
+                double result = calculator.Calculate(a, b);
                 textBox3.Text = result.ToString();
             }
         }
@@ -47,7 +49,8 @@ namespace Calculator
             {
                 double a = Convert.ToDouble(textBox1.Text);
                 double b = Convert.ToDouble(textBox2.Text);
-                double result = a * b;
+                ITwoArgumentsCalculator calculator = TwoArgumentsFactory.Creator("Mult");
+                double result = calculator.Calculate(a, b);
                 textBox3.Text = result.ToString();
             }
         }
@@ -60,7 +63,8 @@ namespace Calculator
                 double b = Convert.ToDouble(textBox2.Text);
                 if (b != 0)
                 {
-                    double result = a / b;
+                    ITwoArgumentsCalculator calculator = TwoArgumentsFactory.Creator("Div");
+                    double result = calculator.Calculate(a, b);
                     textBox3.Text = result.ToString();
                 }
             }
@@ -72,8 +76,10 @@ namespace Calculator
             {
                 double a = Convert.ToDouble(textBox1.Text);
                 double b = Convert.ToDouble(textBox2.Text);
-                double result = Math.Pow(a, b);
+                ITwoArgumentsCalculator calculator = TwoArgumentsFactory.Creator("Pow");
+                double result = calculator.Calculate(a, b);
                 textBox3.Text = result.ToString();
+
             }
         }
 
@@ -83,8 +89,10 @@ namespace Calculator
             {
                 double a = Convert.ToDouble(textBox1.Text);
                 double b = Convert.ToDouble(textBox2.Text);
-                double result = a % b;
+                ITwoArgumentsCalculator calculator = TwoArgumentsFactory.Creator("Ostat");
+                double result = calculator.Calculate(a, b);
                 textBox3.Text = result.ToString();
+
             }
         }
 
