@@ -66,6 +66,28 @@ namespace Calculator
             }
         }
 
+        private void buttonPow_Click(object sender, EventArgs e)
+        {
+            if ((textBox1.Text != "") && (textBox2.Text != ""))
+            {
+                double a = Convert.ToDouble(textBox1.Text);
+                double b = Convert.ToDouble(textBox2.Text);
+                double result = Math.Pow(a, b);
+                textBox3.Text = result.ToString();
+            }
+        }
+
+        private void buttonOstat_Click(object sender, EventArgs e)
+        {
+            if ((textBox1.Text != "") && (textBox2.Text != ""))
+            {
+                double a = Convert.ToDouble(textBox1.Text);
+                double b = Convert.ToDouble(textBox2.Text);
+                double result = a % b;
+                textBox3.Text = result.ToString();
+            }
+        }
+
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
